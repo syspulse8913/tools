@@ -1,0 +1,9 @@
+#!/bin/sh
+PATH=/usr/bin:/bin:/usr/sbin
+
+if [ "$1" == "" ]; then
+   ps -eo "rss,pid,cmd" |sort -k 1 -n
+else
+   ps -eo "rss,pid,cmd" |grep $1
+fi
+   
